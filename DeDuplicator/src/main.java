@@ -12,8 +12,18 @@ public class main {
             }
             System.out.println(hash32);
             System.out.println(hash321);
+            database.checkDriver("com.mysql.cj.jdbc.Driver");
         }catch (FileNotFoundException e){
             e.printStackTrace();
         }
     }
+
+    public static void saveFile(String filepath){
+        try{
+            String hash = md5.md5HashCode32(filepath);
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
 }
