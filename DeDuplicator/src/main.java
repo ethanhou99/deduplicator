@@ -12,6 +12,7 @@ public class main {
             }
             System.out.println(hash32);
             System.out.println(hash321);
+            database.checkDriver("com.mysql.cj.jdbc.Driver");
         }catch (FileNotFoundException e){
             e.printStackTrace();
         }
