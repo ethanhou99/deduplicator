@@ -1,4 +1,12 @@
+import java.sql.*;
+
 public class database {
+
+    private static String user = "root";
+    private static String password = "sjzydxx61wzfTOP";
+    private static String url = "jdbc:mysql://localhost:3306/";
+
+
     public static void checkDriver(String name){
         try {
             Class.forName(name);
@@ -8,4 +16,19 @@ public class database {
             e.printStackTrace();
         }
     }
+
+    public static void init_DB(String locker){
+
+    }
+
+    public static void connect(String locker){
+        try{
+            Connection con = DriverManager.getConnection(url+locker,user,password);
+
+        }catch(SQLException ignored){
+
+        }
+    }
+
+
 }
