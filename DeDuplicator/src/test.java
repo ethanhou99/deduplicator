@@ -3,8 +3,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class main {
-    public static void main(String[] args){
+public class test {
+    public static void test(String[] args){
 
         String testFile = System.getProperty("user.dir")+"/sublinear-big-data1.pptx";
         String testFile2 = System.getProperty("user.dir")+"/sublinear-big-data-1.pptx";
@@ -27,7 +27,6 @@ public class main {
         info.readIn(args);
         System.out.println(info.lockerPath);
         System.out.println(info.fileName);
-        System.out.println(info.opType);
 
 
         // test split

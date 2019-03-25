@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 public class cmdLine {
-    public String opType;
+
+    private String opType;
     public String fileName;
     public String lockerPath;
 
