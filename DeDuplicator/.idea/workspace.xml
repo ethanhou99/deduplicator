@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19019238-430e-4baf-8dba-a2786a050fe5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locker1/43e56aed35d89503fa3ebe49a4d8a32d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/locker1/9c64296955ab98285361f102d677aa94" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/locker1/ab57ec8e5804982d94400ba308b93f30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/locker1/b_cnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/locker1/d94e80534968582d9eb7187b79fbe462" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/locker1/mata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DeDuplicator/MataData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DeDuplicator/MataData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DeDuplicator/cmdLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DeDuplicator/cmdLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DeDuplicator/dedup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DeDuplicator/dedup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DeDuplicator/md5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DeDuplicator/split.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DeDuplicator/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DeDuplicator/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MataData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MataData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmdLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CmdLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dedup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dedup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/md5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/split.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SplitFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sublinear-big-data1.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/sublinear-big-data1.pptx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="27" selection-start-line="27" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="435">
               <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -67,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dedup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="278">
+              <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SplitFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
+            <state relative-caret-position="465">
               <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -144,11 +128,11 @@
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/cmdLine.java" />
         <option value="$PROJECT_DIR$/src/tools.java" />
-        <option value="$PROJECT_DIR$/src/Tools.java" />
         <option value="$PROJECT_DIR$/src/CmdLine.java" />
         <option value="$PROJECT_DIR$/src/SplitFile.java" />
         <option value="$PROJECT_DIR$/src/MataData.java" />
         <option value="$PROJECT_DIR$/src/ExtractFile.java" />
+        <option value="$PROJECT_DIR$/src/Tools.java" />
         <option value="$PROJECT_DIR$/src/dedup.java" />
       </list>
     </option>
@@ -184,7 +168,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553570019161" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553573064630" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -203,7 +187,7 @@
     <configuration name="dedup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dedup" />
       <module name="DeDuplicator" />
-      <option name="PROGRAM_PARAMETERS" value="-addFile sublinear-big-data-1.pptx -locker locker1" />
+      <option name="PROGRAM_PARAMETERS" value="-addFile 10mb.txt -locker txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -320,16 +304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SplitFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ExtractFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -340,10 +314,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CmdLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="27" selection-start-line="27" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dedup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -360,27 +361,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/SplitFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CmdLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dedup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="465">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

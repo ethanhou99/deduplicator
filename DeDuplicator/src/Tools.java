@@ -2,7 +2,6 @@ import java.io.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
 
 
 public class Tools {
@@ -65,8 +64,8 @@ public class Tools {
             }
             fis.close();
             byte[] md5Bytes  = md.digest();
-            BigInteger bigInt = new BigInteger(1, md5Bytes);//1代表绝对值
-            return bigInt.toString(16);//转换为16进制
+            BigInteger bigInt = new BigInteger(1, md5Bytes);// 1 for abs()
+            return bigInt.toString(16);// convert to hex
         } catch (Exception e) {
             e.printStackTrace();
             return "";
@@ -110,7 +109,7 @@ public class Tools {
             byte[] md5Bytes  = md.digest();
             StringBuffer hexValue = new StringBuffer();
             for (int i = 0; i < md5Bytes.length; i++) {
-                int val = ((int) md5Bytes[i]) & 0xff;//解释参见最下方
+                int val = ((int) md5Bytes[i]) & 0xff;
                 if (val < 16) {
                     hexValue.append("0");
                 }
