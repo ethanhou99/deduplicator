@@ -7,7 +7,7 @@ public class dedup {
 
     public static void main(String[] args){
 
-        boolean DEBUG = true;
+        boolean DEBUG = false;
 
         HashMap<String, ArrayList<String>> mata = new HashMap<>();
         HashMap<String, Integer> b_cnt = new HashMap<>();
@@ -41,11 +41,11 @@ public class dedup {
                 }
                 else {
                     try {
-                        File file = new File(target);
-                        sp.splitFile(file, 1024, info.lockerPath);
 
                         // File not saved in appointed locker
                         if(!mata.containsKey(info.fileName)) {
+                            File file = new File(target);
+                            sp.splitFile(file, 1024, info.lockerPath);
                             mataData.store(info.fileName, sp.hashCodes);
                             mataData.write2f(info.lockerPath);
                         }
