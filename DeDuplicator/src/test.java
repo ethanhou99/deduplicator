@@ -14,7 +14,9 @@ public class test {
         split sp = new split();
         MataData mataData = new MataData();
 
-        // test md5 case
+
+        System.out.println("****************test md5****************\n");
+
         try{
             String hash32 = md5.md5HashCode32(testFile);
             String hash32_1 = md5.md5HashCode32(testFile2);
@@ -25,13 +27,13 @@ public class test {
             e.printStackTrace();
         }
 
-        // test cmdLine
+        System.out.println("****************test cmdLine****************\n");
         info.readIn(args);
         System.out.println(info.lockerPath);
         System.out.println(info.fileName);
 
 
-        // test split
+        System.out.println("****************test split****************\n");
         try{
             sp.splitFile(new File(testFile),1024,info.lockerPath);
             System.out.println(sp.hashCodes);
@@ -39,11 +41,13 @@ public class test {
             e.printStackTrace();
         }
 
-        // test MataData
+        System.out.println("****************test MataData****************\n");
         mataData.store(fileName,sp.hashCodes);
         mataData.print_mata();
         mataData.print_cnt();
         mataData.write2f(info.lockerPath);
+        mataData.readcntf(info.lockerPath);
+        mataData.readmataf(info.lockerPath);
 
     }
 }

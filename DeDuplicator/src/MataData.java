@@ -56,7 +56,8 @@ public class MataData {
     }
 
 
-    public HashMap<String, ArrayList<String>> readmataf(String mataname) {
+    public HashMap<String, ArrayList<String>> readmataf(String lockerPath) {
+        String mataname = lockerPath + "/mata";
         HashMap<String, ArrayList<String>> map = null;
         try
         {
@@ -84,7 +85,8 @@ public class MataData {
         return map;
     }
 
-    public HashMap<String, Integer> readcntf(String cntfname) {
+    public HashMap<String, Integer> readcntf(String lockerPath) {
+        String cntfname = lockerPath + "/b_cnt";
         HashMap<String, Integer> map = null;
         try
         {
