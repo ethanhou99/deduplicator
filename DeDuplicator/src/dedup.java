@@ -13,8 +13,8 @@ public class dedup {
         }
 
         else{
-            System.out.println("===================Running Test Cases===================");
             // test cases start here
+            System.out.println("===================Running Test Cases===================");
             test.test(args);
         }
     }

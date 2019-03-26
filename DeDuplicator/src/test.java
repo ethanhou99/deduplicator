@@ -43,7 +43,7 @@ public class test {
         mataData.store(fileName,sp.hashCodes);
         mataData.print_mata();
         mataData.print_cnt();
-        mataData.write2f("mata","b_cnt");
+        mataData.write2f(info.lockerPath);
 
     }
 }

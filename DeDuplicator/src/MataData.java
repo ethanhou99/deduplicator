@@ -31,7 +31,10 @@ public class MataData {
         for (Map.Entry<String, Integer> entry : block_cnt.entrySet())
             System.out.println("Block_Hash: " + entry.getKey() + ", number: " + entry.getValue());
     }
-    public void write2f(String mfname, String bfname) {
+
+    public void write2f(String lockerPath) {
+        String mfname = lockerPath + "/mata";
+        String bfname = lockerPath + "/b_cnt";
         try {
             FileOutputStream mata =
                     new FileOutputStream(mfname);
