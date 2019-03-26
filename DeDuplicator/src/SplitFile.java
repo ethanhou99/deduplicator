@@ -1,9 +1,7 @@
 import java.io.*;
-import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.List;
 
-public class split {
+public class SplitFile {
 
     public static ArrayList<String> hashCodes = new ArrayList<>();
 
@@ -15,7 +13,6 @@ public class split {
         sizeOfFiles *= 1024;
 
         byte[] buffer = new byte[sizeOfFiles];
-        String FileName = f.getName();
 
         try (FileInputStream fis = new FileInputStream(f);
              BufferedInputStream bis = new BufferedInputStream(fis)) {
@@ -24,10 +21,16 @@ public class split {
 
                 // filename : filePartName
                 //String filePartName = String.format("%s %03d", FileName, counter++);
-                String filePartName = md5.md5HashCode32(buffer);
-                File newFile = new File(lockerPath, filePartName);
+                String filePartName = Tools.md5HashCode32(buffer);
+                String directory = lockerPath + "/" + filePartName;
+                File newFile =null;
+                if(!Tools.checkExist(directory)){
+                    newFile = new File(directory);
+                }
                 hashCodes.add(filePartName);
-                try (FileOutputStream out = new FileOutputStream(newFile)) {
+
+                if(newFile!=null){
+                    FileOutputStream out = new FileOutputStream(newFile);
                     out.write(buffer, 0, bytesAmount);
                 }
             }

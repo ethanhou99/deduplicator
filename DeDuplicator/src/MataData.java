@@ -82,6 +82,7 @@ public class MataData {
             System.out.print("key: "+ mentry.getKey() + " & Value: ");
             System.out.println(mentry.getValue());
         }
+        matadata = map;
         return map;
     }
 
@@ -101,7 +102,7 @@ public class MataData {
             System.out.println("Class not found");
             c.printStackTrace();
         }
-//----------------------pretty print for test---------------
+//----------------------pretty print for Test---------------
         System.out.println("Deserialized HashMap..");
         // Display content using Iterator
         Set set = map.entrySet();
@@ -111,6 +112,7 @@ public class MataData {
             System.out.print("key: "+ mentry.getKey() + " & Value: ");
             System.out.println(mentry.getValue());
         }
+        block_cnt = map;
         return map;
     }
 
