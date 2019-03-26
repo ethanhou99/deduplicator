@@ -1,6 +1,6 @@
 public class dedup {
     public static void main(String[] args){
-        boolean DEBUG = false;
+        boolean DEBUG = true;
 
         if(!DEBUG) {
             // Main function starts here
@@ -13,6 +13,7 @@ public class dedup {
         }
 
         else{
+            System.out.println("===================Running Test Cases===================");
             // test cases start here
             test.test(args);
         }

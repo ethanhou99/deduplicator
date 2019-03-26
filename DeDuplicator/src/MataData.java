@@ -1,8 +1,10 @@
 import java.util.*;
+import java.io.*;
 
 public class MataData {
     private HashMap<String, ArrayList<String>> matadata = new HashMap<>();
     private HashMap<String, Integer> block_cnt= new HashMap<>();
+
     public void store(String fname, ArrayList<String> fmd5) {
         matadata.put(fname, fmd5);
         for (String md5 : fmd5) {
@@ -29,6 +31,82 @@ public class MataData {
         for (Map.Entry<String, Integer> entry : block_cnt.entrySet())
             System.out.println("Block_Hash: " + entry.getKey() + ", number: " + entry.getValue());
     }
+    public void write2f(String mfname, String bfname) {
+        try {
+            FileOutputStream mata =
+                    new FileOutputStream(mfname);
+            ObjectOutputStream mataStream = new ObjectOutputStream(mata);
+            mataStream.writeObject(matadata);
+            mataStream.close();
+            mata.close();
+            System.out.println("Serialized MataData is saved in " + mfname);
+            FileOutputStream cnt_list =
+                    new FileOutputStream(bfname);
+            ObjectOutputStream cntStream = new ObjectOutputStream(cnt_list);
+            cntStream.writeObject(block_cnt);
+            cntStream.close();
+            cnt_list.close();
+            System.out.println("Serialized BlockList is saved in " + bfname);
+        } catch(IOException ioe) {
+            ioe.printStackTrace();
+        }
+    }
+
+
+    public HashMap<String, ArrayList<String>> readmataf(String mataname) {
+        HashMap<String, ArrayList<String>> map = null;
+        try
+        {
+            FileInputStream fis = new FileInputStream(mataname);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            map = (HashMap) ois.readObject();
+            ois.close();
+            fis.close();
+        } catch(IOException ioe) {
+            ioe.printStackTrace();
+        } catch(ClassNotFoundException c) {
+            System.out.println("Class not found");
+            c.printStackTrace();
+        }
+//----------------------pretty print for testing---------------
+        System.out.println("Deserialized HashMap..");
+        // Display content using Iterator
+        Set set = map.entrySet();
+        Iterator iterator = set.iterator();
+        while(iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry)iterator.next();
+            System.out.print("key: "+ mentry.getKey() + " & Value: ");
+            System.out.println(mentry.getValue());
+        }
+        return map;
+    }
+
+    public HashMap<String, Integer> readcntf(String cntfname) {
+        HashMap<String, Integer> map = null;
+        try
+        {
+            FileInputStream fis = new FileInputStream(cntfname);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            map = (HashMap) ois.readObject();
+            ois.close();
+            fis.close();
+        } catch(IOException ioe) {
+            ioe.printStackTrace();
+        } catch(ClassNotFoundException c) {
+            System.out.println("Class not found");
+            c.printStackTrace();
+        }
+//----------------------pretty print for test---------------
+        System.out.println("Deserialized HashMap..");
+        // Display content using Iterator
+        Set set = map.entrySet();
+        Iterator iterator = set.iterator();
+        while(iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry)iterator.next();
+            System.out.print("key: "+ mentry.getKey() + " & Value: ");
+            System.out.println(mentry.getValue());
+        }
+        return map;
+    }
 
 }
-

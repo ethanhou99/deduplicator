@@ -8,9 +8,11 @@ public class test {
 
         String testFile = System.getProperty("user.dir")+"/sublinear-big-data1.pptx";
         String testFile2 = System.getProperty("user.dir")+"/sublinear-big-data-1.pptx";
+        String fileName = "sublinear-big-data1.pptx";
 
         cmdLine info = new cmdLine();
         split sp = new split();
+        MataData mataData = new MataData();
 
         // test md5 case
         try{
@@ -36,5 +38,12 @@ public class test {
         } catch(IOException e){
             e.printStackTrace();
         }
+
+        // test MataData
+        mataData.store(fileName,sp.hashCodes);
+        mataData.print_mata();
+        mataData.print_cnt();
+        mataData.write2f("mata","b_cnt");
+
     }
 }
