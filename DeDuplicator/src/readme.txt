@@ -5,7 +5,7 @@
 * Right click on the Deduplicator on right bar -> Open Module Settings -> Language Level and change it to level 8
  (not quite sure why it's not a default setting but that's what I figured out using lab computer)
 
-* Passing args in intellij in Run -> Edit Configurations -> Program Arguments
+* Passing args in intellij in Run -> Edit Configurations -> Program Arguments.
   By now only support two kinds of operation which are -addFile and -retrieveFile
 
 * Args example & attentions:
