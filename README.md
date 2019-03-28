@@ -5,7 +5,7 @@ The current prototype can save files with any format into any locker. If the loc
 
 ## Instruction
 
-### To run the project in command line:
+#### To run the project in command line:
 1. Change the working directory to ../group7/DeDuplicator/src
 2. Compile the source code file `dedup.java`
 ```
@@ -29,8 +29,8 @@ Please click [here](https://agile.bu.edu/bitbucket/projects/EC504PROJ/repos/grou
 
 ## Group Members
 
-Zhongyuan Cai
-Yiun Hou
-Haoxuan Jia
-Zifan Wang
-Boyang Zhou
+- Zhongyuan Cai
+- Yiun Hou
+- Haoxuan Jia
+- Zifan Wang
+- Boyang Zhou
