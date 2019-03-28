@@ -49,7 +49,7 @@ Please click [here](https://agile.bu.edu/bitbucket/projects/EC504PROJ/repos/grou
 ## 4. Group Members
 
 - Zhongyuan Cai
-- Yiun Hou
+- Yicun Hou
 - Haoxuan Jia
 - Zifan Wang
 - Boyang Zhou
