@@ -13,9 +13,9 @@
     "-addFile filename -locker lockername"
     "-retrieveFile filename -locker lockername"
 
-  ** Capital sensitive!
-  ** For filename and lockername only names are supported. Filling paths in these area may cause interruption in program
-  ** Blank args will cause an interruption, which will be fixed in the next version.
+ ** Capital sensitive!
+ ** For filename and lockername only names are supported. Filling paths in these area may cause interruption in program
+ ** Blank args will cause an interruption, which will be fixed in the next version.
 
 * Program's already been tested in lab's computer, while if there's any problem running the prototype,
     contact with chesterw@bu.edu or 8577638804 (Zifan Wang), who's being available 24/7 literally :)
