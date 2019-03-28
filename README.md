@@ -24,8 +24,27 @@ java dedup -addFile text.txt -locker locker1
 java dedup -retrieveFile text.txt -locker locker1
 ```
 
-### To run the project in IntelliJ
-Please click [here](https://agile.bu.edu/bitbucket/projects/EC504PROJ/repos/group7/browse/DeDuplicator/src/readme.txt) to check detailed instruction.
+#### To run the project in IntelliJ
+Please click [here](https://agile.bu.edu/bitbucket/projects/EC504PROJ/repos/group7/browse/DeDuplicator/src/README.md) to check detailed instruction.
+
+1. Right click on the Deduplicator on right bar -> Open Module Settings -> Language Level and change it to level 8
+ (not quite sure why it's not a default setting but that's what I figured out using lab computer)
+
+2. Passing args in intellij in Run -> Edit Configurations -> Program Arguments.
+
+  (By now only support two kinds of operation which are -addFile and -retrieveFile)
+
+3. Args example & attentions:
+```
+    -addFile filename -locker lockername
+    -retrieveFile filename -locker lockername
+```
+
+## This prototype is:
+- Capital sensitive!
+- For filename and lockername only names are supported. Filling paths in these area may cause interruption in program
+- Blank args will cause an interruption, which will be fixed in the next version.
+- Program's already been tested in lab's computer, while if there's any problem running the prototype.
 
 ## Group Members
 
