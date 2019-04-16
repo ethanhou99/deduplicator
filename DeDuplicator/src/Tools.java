@@ -2,6 +2,7 @@ import java.io.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 
 public class Tools {
@@ -120,6 +121,22 @@ public class Tools {
             e.printStackTrace();
             return "";
         }
+    }
+
+
+    public static boolean findStringInFile(String path, String subString) throws IOException {
+
+        File file = new File(path);
+        InputStreamReader read = new InputStreamReader(new FileInputStream(file), "ASCII");
+        BufferedReader bufferedReader = new BufferedReader(read);
+        String line;
+
+        while ((line = bufferedReader.readLine()) != null) {
+            if (line.contains(subString)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

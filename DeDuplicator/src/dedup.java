@@ -48,6 +48,7 @@ public class dedup {
                             sp.splitFile(file, 1024, info.lockerPath);
                             mataData.store(info.fileName, sp.hashCodes);
                             mataData.write2f(info.lockerPath);
+                            System.out.println("File saved!");
                         }
 
                         // File with same name already saved
@@ -62,7 +63,7 @@ public class dedup {
             }
 
             // Retrieve targetFile
-            if(info.opType.compareTo("-retrieveFile")==0){
+            else if(info.opType.compareTo("-retrieveFile")==0){
                 try{
                     ExtractFile.Extract(info.fileName,info.lockerPath,mata);
                 } catch(IOException e){
@@ -70,8 +71,33 @@ public class dedup {
                 }
             }
 
-            else{
-
+            // Substring match
+            else if(info.opType.compareTo("-findSubString")==0){
+                ArrayList<String> subFiles = new ArrayList<>();
+                System.out.println("\nCurrent files saved in the locker with substring '" + info.fileName + "':");
+                long start = System.currentTimeMillis();
+                for(String slice: b_cnt.keySet()){
+                    String curPath = info.lockerPath + "/" + slice;
+                    try {
+                        if (Tools.findStringInFile(curPath, info.fileName)){
+                            subFiles.add(slice);
+                        }
+                    }catch(IOException e){
+                        e.printStackTrace();
+                    }
+                }
+                for(String file: mata.keySet()){
+                    ArrayList<String> tmp = mata.get(file);
+                    for(String md5: subFiles){
+                        if(tmp.indexOf(md5)!=-1){
+                            System.out.println(file);
+                            break;
+                        }
+                    }
+                }
+                double end = ((double)System.currentTimeMillis() - (double)start)/1000;
+                System.out.println("\n------------------------------------------------------");
+                System.out.println("Search finished in "+end+"s");
             }
 
         }

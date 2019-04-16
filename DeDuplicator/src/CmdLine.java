@@ -24,11 +24,17 @@ public class CmdLine {
         }
         else if (opType.compareTo("-retrieveFile")==0) {
             if(!Tools.checkExist(lockerPath)){
-                System.out.println("[Error]Appointed locker not found");
+                System.out.println("[Error] Appointed locker not found");
             }
         }
+        else if (opType.compareTo("-findSubString")==0){
+            if(!Tools.checkExist(lockerPath)){
+                System.out.println("[Error] Appointed locker not found");
+            }
+        }
+
         else {
-            System.out.println("Invalid Input");
+            System.out.println("[Error] Operation not supported");
         }
     }
 }
