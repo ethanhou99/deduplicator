@@ -9,10 +9,15 @@ import java.util.HashMap;
 public class ExtractFile {
     private static void Merge(File output_file, ArrayList<File> files)
             throws IOException {
-        try (FileOutputStream fos = new FileOutputStream(output_file);
-             BufferedOutputStream mergingStream = new BufferedOutputStream(fos)) {
-            for (File f : files) {
-                Files.copy(f.toPath(), mergingStream);
+        if (output_file.isDirectory()){
+
+        } else {
+            try (FileOutputStream fos = new FileOutputStream(output_file);
+                 BufferedOutputStream mergingStream = new BufferedOutputStream(fos)) {
+                for (File f : files) {
+                    Files.copy(f.toPath(), mergingStream);
+                }
+
             }
         }
     }
@@ -24,6 +29,7 @@ public class ExtractFile {
                 File input_file = new File(lockerPath+"/"+hash_file_name);
                 files.add(input_file);
             }
+            System.out.println(output_file);
             Merge(output_file, files);
             System.out.println("file successfully extracted");
         }

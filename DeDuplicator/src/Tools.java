@@ -1,5 +1,7 @@
 import java.io.*;
 import java.math.BigInteger;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -16,9 +18,22 @@ public class Tools {
     }
 
     public static boolean checkExist(String filepath) {
-        File file=new File(filepath);
+        File file = new File(filepath);
         if (!file.exists()) {
             return false;
+        }
+        return true;
+    }
+
+    public static boolean checkValid(String path) {
+        File file = new File(path);
+        if (!file.exists()) {
+            try {
+                Paths.get(path);
+            } catch (InvalidPathException | NullPointerException ex) {
+                return false;
+            }
+            return true;
         }
         return true;
     }

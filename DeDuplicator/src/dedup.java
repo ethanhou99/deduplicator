@@ -6,7 +6,7 @@ public class dedup {
     private static String pwd = System.getProperty("user.dir")+"/";
 
     public static void main(String[] args){
-
+        SaveFolder sf = new SaveFolder();
         boolean DEBUG = false;
 
         HashMap<String, ArrayList<String>> mata = new HashMap<>();
@@ -19,7 +19,6 @@ public class dedup {
             CmdLine info = new CmdLine();
             SplitFile sp = new SplitFile();
             MataData mataData = new MataData();
-
             info.readIn(args);
 
             String target = pwd + info.fileName;
@@ -36,12 +35,14 @@ public class dedup {
 
             // Add targetFile into locker
             if (info.opType.compareTo("-addFile") == 0) {
-                if (!Tools.checkExist(target)) {
+                if (!Tools.checkValid(target)) {
                     System.out.println("[Error] Target file "+info.fileName+ " not found at current path: " + pwd);
                 }
-                else {
+                else if(sf.isFolder(target)) {
+                    System.out.println(target);
+                    sf.saveFolder(target, args[3], mataData, sp, mata);
+                } else {
                     try {
-
                         // File not saved in appointed locker
                         if(!mata.containsKey(info.fileName)) {
                             File file = new File(target);
