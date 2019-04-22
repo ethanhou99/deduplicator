@@ -1,55 +1,74 @@
-# Deduplicator Group7
-## 1. Description
+## I. Documentation
 
-The current prototype can save files with any format into any locker. If the locker doesn't exist the program will create a new locker and save a file in it automatically. When the file's saved, the deduplicator will cut the input file to multiple small pieces and except the last piece, the rest pieces are in the same size. If a file is same to the saved files, the hash code of the file pieces are also same as the saved file pieces and the new file will be saved as pointers point to the duplicated pieces instead of saving the file again. MetaData in this part is worked as a pointer and written in two files meta and b_cnt (some info hasn't been used yet but are saved for the convenience of deletion in the future)
+### This program is: Deduplication
+This task is about designing a deduplication system that can save similar files with more efficiency in space
+utilization.
 
-## 2. Instruction
+### Group members:
+Zhongyuan Cai, Yicun Hou, Haoxuan Jia, Zifan Wang, Boyang Zhou
 
-#### * To run the project in command line:
-1. Change the working directory to `../group7/DeDuplicator/src`
-2. Compile the source code file `dedup.java`
-```
-javac dedup.java
-```
-3. Save a file
-- To save a file from terminal, the target file to save should in `../group7/DeDuplicator/src`
-- Then run the collowing code:
-```
-//Code example to save test.txt to locker1
-java dedup -addFile text.txt -locker locker1
-```
-4. Retrieve a file
-```
-// Code example to retrieve test.txt from locker1
-java dedup -retrieveFile text.txt -locker locker1
-```
+### High-level description:
+Basic idea is to split the input file into fixed pieces and calculate each piece's hashcode(MD5). Each file saved in
+the locker has a pair of info which is like {filename, [hashcodes,hashcodes,...]} and this part is saved in the
+mataData. Also there's a simplified bloom filter(using only one hash function) that record each hashcodes and count its
+numbers which makes it easier for deletion. If file to be saved has some part with same hashcode as recorded in the
+mata, there's no need to save that piece and thus how deduplication works.
 
-#### * To run the project in IntelliJ
-Please click [here](https://agile.bu.edu/bitbucket/projects/EC504PROJ/repos/group7/browse/DeDuplicator/src/README.md) to check detailed instruction.
+### Extra Features:
 
-1. Right click on the Deduplicator on right bar -> Open Module Settings -> Language Level and change it to level 8
- (not quite sure why it's not a default setting but that's what I figured out using lab computer)
+#### Substring search
+- Appoint a specific encoding format ( ASCII, UTF8 or UTF16 )
+- For each sliced file in the locker, match the substring with content, and record the hashcode file where substring
+matches
+- Search in the mataData, a structure which is like {filename, [hashcodes.....]}, in this case
+Hashmap<String, ArrayList<String>> especially. Print out the filename that matches with a recoreded hashcode (recorded
+above)
 
-2. Passing args in intellij in Run -> Edit Configurations -> Program Arguments.
+#### File Deletion
 
-  (By now only support two kinds of operation which are -addFile and -retrieveFile)
+#### Networked access
+- Create a ssh tester account. While use want to use network access run the project, use the tester account to login to the server, then go to the project directory and run the project as usual. The file transfer will use ssh command. This feature needs reservation before testing, since the server is deployed in personal laptop and we need to run the server to support this function.
 
-3. Args example & attentions:
-```
-    -addFile filename -locker lockername
-    -retrieveFile filename -locker lockername
-```
+#### Store directories of files as one entity
+- The data structure to save the folder information is to build a HashMap<FolderName,HashMap<FilePath, FileName>>, this hashmap keeps to the directory logic of the original folder. 
+- For saving the blank folder, we treat each folder as a file as will. 
+  - While saving the folder, the hashcode of the folder is set to -1; 
+  - While saving the file, the hashcode is the real hash code of the file. 
+- On the contrary, while retrieving the folder or file:
+  - If the program notice the hashcode is -1, the program will create a folder;
+  - If the program notice the hashcode is not -1, the program will restore the file to the original path.
+- The above implementation guarantees the original dirctory logic of the input folder. Also, use can retrieve the file under the folder individually once they saved the folder as one entity.
+- The program will check the input is file or folder automatically, users don't need to give extra command to save or retrieve a folder.
 
-## 3. This prototype is:
-- Capital sensitive!
-- For filename and lockername only names are supported. Filling paths in these area may cause interruption in program
-- Blank args will cause an interruption, which will be fixed in the next version.
-- Program's already been tested in lab's computer, while if there's any problem running the prototype.
+#### Real-time GUI
 
-## 4. Group Members
+#### Store MySQL databases
 
-- Zhongyuan Cai
-- Yicun Hou
-- Haoxuan Jia
-- Zifan Wang
-- Boyang Zhou
+#### Store similar images
+
+
+## III. Work breakdown
+### Zhongyuan Cai
+
+### Yicun Hou
+- Command line processing and function call
+- Ability to store directories of files as one entity, including:
+  - Save and retieve blank foler
+  - Save and retrieve folder and subfolder's content
+  - Ability to retrieve folder's files individually
+  - Ability to retrieve folder as original directory logic
+- Develop networked access to the locker
+
+### Haoxuan Jia
+
+### Zifan Wang
+- Implement tools: MD5 encodeing, check path, make directory, search string in file
+- Basic structure of the main function (main function from the prototype version)
+- Implement Substring search
+- All test cases (till prototype version)
+
+### Boyang Zhou
+
+## IV. Jira links
+The working pregress can be tracked in [Jira](https://agile.bu.edu/jira/projects/GROUP7/summary).
+
