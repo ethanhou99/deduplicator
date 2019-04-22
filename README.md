@@ -1,20 +1,20 @@
 ## I. Documentation
 
-### This program is: Deduplication
+### * This program is: Deduplication
 This task is about designing a deduplication system that can save similar files with more efficiency in space
 utilization.
 
-### Group members:
+### * Group members:
 Zhongyuan Cai, Yicun Hou, Haoxuan Jia, Zifan Wang, Boyang Zhou
 
-### High-level description:
+### * High-level description:
 Basic idea is to split the input file into fixed pieces and calculate each piece's hashcode(MD5). Each file saved in
 the locker has a pair of info which is like {filename, [hashcodes,hashcodes,...]} and this part is saved in the
 mataData. Also there's a simplified bloom filter(using only one hash function) that record each hashcodes and count its
 numbers which makes it easier for deletion. If file to be saved has some part with same hashcode as recorded in the
 mata, there's no need to save that piece and thus how deduplication works.
 
-### Extra Features:
+### * Extra Features:
 
 #### Substring search
 - Appoint a specific encoding format ( ASCII, UTF8 or UTF16 )
@@ -48,9 +48,9 @@ above)
 
 
 ## III. Work breakdown
-### Zhongyuan Cai
+### * Zhongyuan Cai
 
-### Yicun Hou
+### * Yicun Hou
 - Command line processing and function call
 - Ability to store directories of files as one entity, including:
   - Save and retieve blank foler
@@ -59,15 +59,15 @@ above)
   - Ability to retrieve folder as original directory logic
 - Develop networked access to the locker
 
-### Haoxuan Jia
+### * Haoxuan Jia
 
-### Zifan Wang
+### * Zifan Wang
 - Implement tools: MD5 encodeing, check path, make directory, search string in file
 - Basic structure of the main function (main function from the prototype version)
 - Implement Substring search
 - All test cases (till prototype version)
 
-### Boyang Zhou
+### * Boyang Zhou
 
 ## IV. Jira links
 The working pregress can be tracked in [Jira](https://agile.bu.edu/jira/projects/GROUP7/summary).
